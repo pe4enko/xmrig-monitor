@@ -109,6 +109,7 @@ public class XmrigMonitorUI extends UI implements PropertyChangeListener {
 	}
 
 	private void refreshRigs(String filterText) {
+		rigsService.refreshStatuses();
 		grid.setItems(rigsService.getAllRigs());
 	}
 
