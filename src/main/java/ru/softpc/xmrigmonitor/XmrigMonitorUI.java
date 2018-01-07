@@ -87,6 +87,7 @@ public class XmrigMonitorUI extends UI implements PropertyChangeListener {
 		grid.setSizeFull();
 		grid.setHeight(100, Unit.PERCENTAGE);
 		grid.setColumns("ip", "workerId", "currentHashrate", "hashrate1min", "hashrate15min", "hashrateHighest", "online");
+		grid.setSelectionMode(Grid.SelectionMode.MULTI);
 
 		HorizontalLayout actions = new HorizontalLayout(addRigBtn, removeRigBtn, checkRig);
 		VerticalLayout mainLayout = new VerticalLayout(actions);
@@ -96,7 +97,7 @@ public class XmrigMonitorUI extends UI implements PropertyChangeListener {
 //		setContent(new Button("Click me", e -> Notification.show("Hello Spring+Vaadin user!")));
 
 		// Connect selected Customer to editor or hide if none is selected
-		grid.asSingleSelect().addValueChangeListener(e -> {
+		grid.asMultiSelect().addValueChangeListener(e -> {
 			removeRigBtn.setEnabled(e.getValue() != null);
 			checkRig.setEnabled(e.getValue() != null);
 		});
