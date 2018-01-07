@@ -2,4 +2,4 @@
 
 Monitor (frontend) for https://github.com/xmrig
 
-<img src="master/xmrig-monitor.png" width="350"/>
+<img src="xmrig-monitor.png" width="350"/>
